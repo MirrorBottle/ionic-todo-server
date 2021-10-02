@@ -13,9 +13,10 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return TodoResource::collection(Todo::all());
+        $todos = $request->has('is_archive') ? Todo::archive()->get() : Todo::active()->get();
+        return TodoResource::collection($todos);
     }
 
     /**

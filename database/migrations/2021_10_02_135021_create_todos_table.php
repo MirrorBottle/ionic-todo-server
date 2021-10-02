@@ -20,6 +20,7 @@ class CreateTodosTable extends Migration
             $table->text('description');
             $table->dateTime('deadline');
             $table->string('form_link')->nullable();
+            $table->boolean('is_archive')->default(0);
             $table->timestamps();
         });
     }

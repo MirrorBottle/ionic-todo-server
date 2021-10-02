@@ -12,7 +12,8 @@ class Todo extends Model
         'title',
         'description',
         'form_link',
-        'deadline'
+        'deadline',
+        'is_archive'
     ];
 
     public $casts = [
@@ -57,5 +58,14 @@ class Todo extends Model
                 return $this->lesson;
                 break;
         }
+    }
+
+    // SCOPE
+    public function scopeArchive($query) {
+        return $query->where('is_archive', 1);
+    }
+
+    public function scopeActive($query) {
+        return $query->where('is_archive', 0);
     }
 }
