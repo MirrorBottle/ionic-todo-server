@@ -15,14 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('todos')->insert([
-            [
-                'lesson' => 'PTI',
-                'title' => 'PTI 2',
-                'description' => '-',
-                'form_link' => null,
-                'deadline' => Carbon::now()->toDateTimeString()
-            ]
-        ]);
+        
     }
 }
