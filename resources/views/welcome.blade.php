@@ -20,7 +20,7 @@
                     <img src="{{asset('images/logo.jpg')}}"  class="mb-5 h-72 rounded-lg shadow-2xl"> 
                     <h1 class="mb-5 text-5xl font-bold">To Do</h1> 
                     <p class="mb-5">Cari Apa? Tidak ada apa-apa di sini. Pergi.</p> 
-                    <a href="{{asset('app/do-your-task.apk')}}" download class="btn btn-warning">
+                    <a href="{{asset('app/do-your-task-member.apk')}}" download class="btn btn-warning">
                         Download
                     </a>
                 </div>
