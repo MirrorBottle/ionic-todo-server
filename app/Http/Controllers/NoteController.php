@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\TodoResource;
-use App\Models\Todo;
+use App\Http\Resources\NoteResource;
+use App\Models\Note;
 use Illuminate\Http\Request;
 
-class TodoController extends Controller
+class NoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        return TodoResource::collection(Todo::all());
+        return NoteResource::collection(Note::all());
     }
 
     /**
@@ -26,8 +26,8 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        $todo = Todo::create($request->all());
-        return new TodoResource($todo);
+        $note = Note::create($request->all());
+        return new NoteResource($note);
     }
 
     /**
@@ -38,7 +38,7 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        return new TodoResource(Todo::findOrFail($id));
+        return new NoteResource(Note::findOrFail($id));
     }
 
     /**
@@ -50,9 +50,9 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $todo = Todo::findOrFail($id);
-        $todo->update($request->all());
-        return new TodoResource($todo);
+        $note = Note::findOrFail($id);
+        $note->update($request->all());
+        return new NoteResource($note);
     }
 
     /**
@@ -63,8 +63,8 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        $todo = Todo::findOrFail($id);
-        $todo->delete();
+        $note = Note::findOrFail($id);
+        $note->delete();
         return response()->json([
             'code' => 200,
             'message' => 'success'

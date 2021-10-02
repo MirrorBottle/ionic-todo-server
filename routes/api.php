@@ -21,5 +21,6 @@ Route::group([
     'namespace' => 'App\Http\Controllers',
 ], function() {
     Route::apiResource('todos', 'TodoController');
+    Route::apiResource('notes', 'NoteController');
 });
 
