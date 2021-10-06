@@ -15,7 +15,7 @@ class TodoController extends Controller
      */
     public function index(Request $request)
     {
-        $todos = $request->has('is_archive') ? Todo::archive()->get() : Todo::active()->get();
+        $todos = $request->has('is_archive') ? Todo::archive()->orderBy('created_at', 'desc')->get() : Todo::active()->orderBy('created_at', 'desc')->get();
         return TodoResource::collection($todos);
     }
 

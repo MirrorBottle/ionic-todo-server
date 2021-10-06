@@ -26,8 +26,8 @@
                 </div>
                 
             </div>
-            <footer class="items-center p-4 footer bg-base-300 text-neutral-content">
-                <p>Made by Bayu Setiawan</p> 
+            <footer class="items-center p-5 footer bg-base-200 text-neutral-content flex justify-center">
+                <p style="display: flex!important" class="text-center flex flex-row">Made by Bayu Setiawan. Check my <b><a href="https://penaku.my.id" target="_blank" rel="noopener noreferrer">site</a></b>. Check on <b><a href="https://github.com/MirrorBottle/ionic-todo-app" target="_blank" rel="noopener noreferrer">Github</a></b></p> 
              </footer>
             
         </div>

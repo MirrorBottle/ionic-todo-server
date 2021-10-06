@@ -15,7 +15,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-        return NoteResource::collection(Note::all());
+        return NoteResource::collection(Note::orderBy('created_at', 'desc')->get());
     }
 
     /**
