@@ -20,7 +20,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group([
     'namespace' => 'App\Http\Controllers',
 ], function() {
+    
+    // AUTH
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+
+    // TODO
     Route::apiResource('todos', 'TodoController');
+
+    // NOTE
     Route::apiResource('notes', 'NoteController');
+
+    // LECTURE
+    Route::get('lectures', 'LectureController@index');
+
+    // ABSENT
+    Route::apiResource('absents', 'AbsentController');
+    
 });
 
