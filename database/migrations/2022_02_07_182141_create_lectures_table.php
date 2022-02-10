@@ -16,6 +16,7 @@ class CreateLecturesTable extends Migration
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('day');
             $table->string('sheet_id');
             $table->timestamps();
         });

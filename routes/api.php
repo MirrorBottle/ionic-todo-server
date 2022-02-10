@@ -36,6 +36,9 @@ Route::group([
 
     // ABSENT
     Route::apiResource('absents', 'AbsentController');
+
+    // USERS
+    Route::get('users', 'UserController@index');
     
 });
 
