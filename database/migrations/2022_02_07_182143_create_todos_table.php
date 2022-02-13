@@ -15,13 +15,13 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->string('lesson');
+            $table->unsignedBigInteger('lecture_id');
             $table->string('title');
             $table->text('description');
             $table->dateTime('deadline');
-            $table->string('form_link')->nullable();
             $table->boolean('is_archive')->default(0);
             $table->timestamps();
+            $table->foreign('lecture_id')->references('id')->on('lectures')->cascadeOnDelete();
         });
     }
 
